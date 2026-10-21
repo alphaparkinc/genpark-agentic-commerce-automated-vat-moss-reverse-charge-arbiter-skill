@@ -1,0 +1,61 @@
+{
+  "name": "genpark-agentic-commerce-automated-vat-moss-reverse-charge-arbiter-skill",
+  "version": "1.0.0",
+  "title": "Cross-Border EU VAT One Stop Shop (MOSS) Reverse-Charge Skill",
+  "description": "Cross-border EU VAT One Stop Shop (OSS/MOSS) reverse-charge B2B/B2C validation, VIES VAT number lookup, and automated tax jurisdictional router. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "eu-vat",
+    "vies-validation",
+    "moss-reverse-charge",
+    "cross-border-tax",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "audit_eu_vat_reverse_charge",
+      "description": "Determine whether B2B transaction qualifies for Article 196 reverse-charge zero-rated VAT.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "buyer_country_code": {
+            "type": "string"
+          },
+          "seller_country_code": {
+            "type": "string"
+          },
+          "buyer_vies_vat_number": {
+            "type": "string"
+          },
+          "is_b2b_verified": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "buyer_country_code",
+          "seller_country_code",
+          "is_b2b_verified"
+        ]
+      }
+    },
+    {
+      "name": "lookup_eu_member_state_vat_rate",
+      "description": "Retrieve standard destination VAT rate for B2C consumer digital goods.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "member_state_code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "member_state_code"
+        ]
+      }
+    }
+  ]
+}
